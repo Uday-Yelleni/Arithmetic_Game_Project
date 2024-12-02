@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="CSS files/Game_css.css">
+</head>
+<body>
+    
+    <div class="container" id="questionary" !hidden>
+        <div id="timer"></div>
+        <h1>Questions</h1>
+        <br><br>
+        <div class="problem">
+            <span id="num1">10</span> <span id = "operand">+</span> <span id="num2">20</span> = 
+            <input type="number" id="userAnswer" placeholder="Your answer" />
+            <br><br>
+        </div>
+        <div id="result"></div>
+        <button id="checkAnswer">Check Answer</button>
+        <!-- <br><br>
+         -->
+        <button id="nextProblem" >Next Problem</button>
+        <button id="submit" hidden>Submit Game</button>
+		
+		<br><br>
+		<h3>Correct Responses :  <span id="crctresponse">0</span></h3>
+		
+        <br><br>
+		<h3>Wrong Responses :  <span id="flseresponse">0</span>	</h3>
+		
+    </div>
+
+    <script src="JS files/Game_Jscript.js"></script>
+
+</body>
+</html>

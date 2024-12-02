@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Settings</title>
+    <link rel="stylesheet" href="CSS files/Game_settings_css.css">
+    </style>
+</head>
+<body>
+
+    <header id="welcome">
+    
+        <h2 div class="header"> Welcome to the Game</h2>
+    
+    </header> 
+    
+    <nav id="nav_menu">
+        <ul div class="menu">
+                <li><a  href="Main.html">Home</a></li>
+                <li><a div class="current" href="Game_settings.html">Game_settings</a></li>
+                <li><a href="Results.html">Results</a></li>      
+        </ul>
+    </nav>
+
+    <div class="container" >
+        <h1>Arithmetic Game</h1>
+            <div id = "settings_container" >
+            
+                    <label for="num-questions">Number of Questions:</label>
+                    <input type="number" id="num-questions" name="num-questions" min="3" required><br><br>
+                    
+                    <label for="operation">Choose Operations:</label><br>
+                    <input type="checkbox" id="addition" name="operation" value="addition">
+                    <label for="addition">Addition</label><br>
+                    <input type="checkbox" id="subtraction" name="operation" value="subtraction">
+                    <label for="subtraction">Subtraction</label><br>
+                    <input type="checkbox" id="multiplication" name="operation" value="multiplication">
+                    <label for="multiplication">Multiplication</label><br>
+                    <input type="checkbox" id="division" name="operation" value="division">
+                    <label for="division">Division</label><br><br>
+
+
+                
+                    
+                    <button type="submit" id="number_continue">Continue</button>
+                
+            </div>
+           
+        
+
+
+        <div id="range_operand" hidden>
+            <label for="min-digit">Minimum Digit of operand:</label>
+            <input type="number" id="min-digit" name="min-digit" min="0" required><br><br>
+            <label for="max-digit">Maximum Digit of operand:</label>
+            <input type="number" id="max-digit" name="max-digit" min="5" required><br><br>
+
+            <button type="submit" id="range_continue">Continue</button>
+        </div>
+
+
+
+       
+
+            <div id = "timer" hidden>
+
+                <h3>Do you need a timer for the Game?</h3>
+                <br>
+                <input type="radio" id="timer_yes" name="timer_option"> Yes <br>
+                <input type="radio" id="timer_no" name="timer_option"> No 
+                <br>
+                <div id = "timer_yes_checked" hidden>
+                    <label for="timer">Timer (seconds):</label>
+                    <input type="number" id="timer_seconds" name="timer" min="1" required><br><br>
+                </div>
+                
+                <br>
+                <button type="submit" id="start_game">Start Game</button>
+                
+        
+        
+            </div>
+
+        
+
+             <!-- <div id="game" style="display:none;">
+            <div class="question" id="question"></div>
+            <input type="number" id="answer" name="answer" required>
+            <button id="submit-answer">Submit Answer</button>
+            <div class="stats">
+                <p>Questions Attempted: <span id="attempted">0</span></p>
+                <p>Correct Answers: <span id="correct">0</span></p>
+                <p>Incorrect Answers: <span id="incorrect">0</span></p>
+            </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="JS files/Game_settings_Jscript.js"></script>
+    
+
+</body>
+</html>
