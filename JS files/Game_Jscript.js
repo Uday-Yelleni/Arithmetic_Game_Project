@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const operandElement = document.getElementById('operand');
     const userAnswerElement = document.getElementById('userAnswer');
     const resultElement = document.getElementById('result');
-    const crctResponseElement = document.getElementById('crctresponse');
-    const flseResponseElement = document.getElementById('flseresponse');
+    const correctResponseElement = document.getElementById('correctResponse');
+    const falseResponseElement = document.getElementById('falseResponse');
     const checkAnswerButton = document.getElementById('checkAnswer');
     const nextProblemButton = document.getElementById('nextProblem');
     const submitButton = document.getElementById('submit');
@@ -90,22 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
         }
 
-        if (userAnswer === correctAnswer) {
-            correctResponses++;
-        } else {
-            wrongResponses++;
-        }
+        ResponseCheck(userAnswer, correctAnswer);
 
-        crctResponseElement.textContent = correctResponses;
-        flseResponseElement.textContent = wrongResponses;
+        correctResponseElement.textContent = correctResponses;
+        falseResponseElement.textContent = wrongResponses;
 
-        if (currentQuestion < numberQuestions -1) {
+        if (currentQuestion < numberQuestions - 1) {
             currentQuestion++;
-            generateProblem();
         } else {
+            ResponseCheck(userAnswer, correctAnswer);
             nextProblemButton.hidden = true;
             submitButton.hidden = false;
             calculateTimeTaken();
+        }
+        generateProblem();
+    }
+
+    function ResponseCheck(userAnswer, correctAnswer) {
+        if (userAnswer === correctAnswer) {
+            correctResponses++;
+        }
+         else {
+            wrongResponses++;
         }
     }
 
@@ -141,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer(timerSeconds);
 
     submitButton.addEventListener('click', function() {
-        calculateTimeTaken();
+
+        
         localStorage.setItem('correctResponses', correctResponses);
         localStorage.setItem('wrongResponses', wrongResponses);
         location.href = 'Results.html';
